@@ -33,6 +33,12 @@ def get_drvier():
   driver.get("https://automated.pythonanywhere.com/")
   return driver
 
+#membuat fungsi untuk memisahkan text 
+def clean_text(text):
+  """Extract only the temperature from text"""
+  #memformat text float dan memisahkan 
+  output = float(text.split(": ")[1])
+  return output
 
 def main():
   #memanggil fungsi get_drvier untuk menjalankan driver
@@ -43,7 +49,7 @@ def main():
   #membuat variabel untuk menyimpan data (xpath) dari halaman web
   element = driver.find_element(by="xpath",
                                 value="/html/body/div[1]/div/h1[2]")
-  return element.text
+  return clean_text(element.text)
 
 #cetak hasil dari fungsi main
 print(main())
