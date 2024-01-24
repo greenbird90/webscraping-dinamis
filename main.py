@@ -1,6 +1,6 @@
 #import tool webdriver via selenium
 from selenium import webdriver
-#memanggil fungsi waktu
+#memanggil fungsi waktu untuk menghitung waktu eksekusi
 import time
 
 #jika menggunakan local IDE
@@ -44,7 +44,6 @@ def main():
   element = driver.find_element(by="xpath",
                                 value="/html/body/div[1]/div/h1[2]")
   return element.text
-
 
 #cetak hasil dari fungsi main
 print(main())
